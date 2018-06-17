@@ -1,51 +1,38 @@
-import React, { Component } from 'react'
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import React, { Component, Fragment } from 'react'
+
+import { Route, Router, Switch } from 'react-router-dom'
 import './App.css'
+import RegistrationPage1 from './RegistrationPage1'
+import RegistrationPage2 from './RegistrationPage2'
+import RegistrationPage3 from './RegistrationPage3'
+import Videocall from './DocVideocall'
 
-const options = [
-  { key: 'm', text: 'Male', value: 'male' },
-  { key: 'f', text: 'Female', value: 'female' },
-]
+import history from './helpers/withTracker'
 
-class App extends Component {
+export default class App extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {}
+
+  }
+
   render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          {/*<img src={logo} className="App-logo" alt="logo" />*/}
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Form>
-          <Form.Field>
-            <label>First Name</label>
-            <input placeholder='First Name'/>
-          </Form.Field>
-          <Form.Field>
-            <label>Last Name</label>
-            <input placeholder='Last Name'/>
-          </Form.Field>
 
+      <Router history={history}>
+        <Fragment>
+          <Switch>
+            <Route path='/consultation' component={(Videocall)}/>
+            <Route path='/register/3' component={(RegistrationPage3)}/>
+            <Route path='/register/2' component={(RegistrationPage2)}/>
+            <Route path='/register' component={RegistrationPage1}/>
+            <Route component={RegistrationPage1}/>
+          </Switch>
+        </Fragment>
+      </Router>
 
-          <Form.Group widths='equal'>
-            <Form.Field>
-              <label>Address</label>
-            </Form.Field>
-            <Form.Input fluid label='First name' placeholder='First name'/>
-            <Form.Input fluid label='Last name' placeholder='Last name'/>
-            <Form.Select fluid label='Gender' options={options} placeholder='Gender'/>
-          </Form.Group>
-          <Form.Field>
-            <Checkbox label='I agree to the Terms and Conditions'/>
-          </Form.Field>
-          <Button type='submit'>Submit</Button>
-        </Form>
-        <Button width={'40px'} primary>Continue</Button>
-      </div>
     )
   }
-}
 
-export default App
+}
