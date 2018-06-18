@@ -9,6 +9,7 @@
 </head>
 
 <body>
+<iframe id="docHeader" frameborder="0" width="100%" height="200px" src="https://localhost:3000/docBack"></iframe>
 <iframe id="docQuestions" frameborder="0" width="20%" height="800px" src="https://localhost:3000/docQ"></iframe>
 <div width="80%" id="videos-container" style="float: right"></div>
 
@@ -43,7 +44,7 @@
   connection.videosContainer = document.getElementById('videos-container')
   connection.onstream = function (event) {
 
-    var width = "1320"
+    var width = '1320'
 
     var mediaElement = getMediaElement(event.mediaElement, {
       title: event.userid,

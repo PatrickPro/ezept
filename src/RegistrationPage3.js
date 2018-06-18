@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react'
 import logo from './images/logos/logoEzept.png'
+import serverAddress from './myIPaddress'
 
 class RegistrationPage3 extends Component {
   render () {
@@ -30,7 +31,7 @@ class RegistrationPage3 extends Component {
                 <Form.Input fluid label='Question2' placeholder='Question2'/>
 
                 <Button primary type='submit'
-                        onClick={() => {window.location = 'https://10.19.1.178:4443/src/videocall.html'}}>Connect
+                        onClick={() => {window.location = serverAddress + ':4443/src/videocall.html'}}>Connect
                   Me</Button>
               </Segment>
             </Form>
