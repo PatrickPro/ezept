@@ -9,7 +9,6 @@ import DoctorQuestions from './DoctorQuestions'
 import Patients from './PatientsListView'
 import PatientInfo from './PatientInfo'
 import DocHeader from './DocHeader'
-import DeliveryOptions from './DeliveryOptions'
 
 import history from './helpers/withTracker'
 import DeliveryOptions from './DeliveryOptions'
