@@ -22,7 +22,7 @@ class RegistrationPage3 extends Component {
               <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
               <Grid.Column style={{ maxWidth: 450 }}>
               <Header as='h2' textAlign='center'>
-                Anamnesis
+                Anamnese
               </Header>
               <Form size='large'>
                <Segment stacked>

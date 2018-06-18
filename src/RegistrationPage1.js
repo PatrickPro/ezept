@@ -41,7 +41,7 @@ class RegistrationPage1 extends Component {
           </Form.Group>
           <Form.Group widths='equal'>
             <Form.Field>
-              <label>Date</label>
+              <label>Geburtstag</label>
               <ReactSemanticDatetime/>
             </Form.Field>
           </Form.Group>

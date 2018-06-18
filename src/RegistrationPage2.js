@@ -25,7 +25,6 @@ class RegistrationPage2 extends Component {
         <Form size='large'>
          <Segment stacked>
           <Form.Field>
-            <label>Address</label>
             <Form.Group widths='equal'>
               <Form.Input placeholder='Strasse'/>
               <Form.Input placeholder='Hausnummer'/>
