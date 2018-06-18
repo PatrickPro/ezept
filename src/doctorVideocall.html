@@ -9,7 +9,8 @@
 </head>
 
 <body>
-<div id="videos-container"></div>
+<iframe id="docQuestions" frameborder="0" width="20%" height="800px" src="http://localhost:3000/docQ"></iframe>
+<div width="80%" id="videos-container" style="float: right"></div>
 
 <script src="/src/dist/RTCMultiConnection.min.js"></script>
 
@@ -42,7 +43,7 @@
   connection.videosContainer = document.getElementById('videos-container')
   connection.onstream = function (event) {
 
-    var width = parseInt(connection.videosContainer.clientWidth)
+    var width = "1320"
 
     var mediaElement = getMediaElement(event.mediaElement, {
       title: event.userid,
