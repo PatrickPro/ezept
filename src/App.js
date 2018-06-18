@@ -11,6 +11,7 @@ import PatientInfo from './PatientInfo'
 import DocHeader from './DocHeader'
 
 import history from './helpers/withTracker'
+import DeliveryOptions from './DeliveryOptions'
 
 export default class App extends Component {
   constructor (props) {
@@ -27,6 +28,7 @@ export default class App extends Component {
         <Fragment>
           <Switch>
             <Route path='/patientInfo' component={(PatientInfo)}/>
+            <Route path='/eZept' component={(DeliveryOptions)}/>
             <Route path='/doc' component={(Patients)}/>
             <Route path='/docBack' component={(DocHeader)}/>
             <Route path='/docQ' component={(DoctorQuestions)}/>
