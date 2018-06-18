@@ -1,36 +1,49 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
-import { Button, Form } from 'semantic-ui-react'
+
+import { Link, withRouter } from 'react-router-dom'
+import { Button, Checkbox, Form, Grid, Header,  Segment } from 'semantic-ui-react'
+import logo from './images/logos/logoEzept.png';
+
 
 import moment from 'moment'
 
+
 class RegistrationPage3 extends Component {
-
-  constructor () {
-    super()
-    this.state = {
-      myDate: moment()
-    }
-  }
-
   render () {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Anamnese</h1>
+          {<img src= {logo} className="App-logo" alt="logo" />}
         </header>
-        <Form>
-          <Form.Input fluid label='Question1' placeholder='Question1'/>
-          <Form.Input fluid label='Question2' placeholder='Question2'/>
 
+        <style>{`
+          body > div,
+          body > div > div,
+          body > div > div.login-form {
+            height: 90%;
+          }
+          `}</style>
+        <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
+        <Grid.Column style={{ maxWidth: 450 }}>
+        <Header as='h2' color='teal' textAlign='center'>
+          Anamnesis
+        </Header>
+        <Form size='large'>
+         <Segment stacked>
+            <Form.Input fluid label='Question1' placeholder='Question1'/>
+            <Form.Input fluid label='Question2' placeholder='Question2'/>
 
-          <Button primary type='submit'
+           <Button primary type='submit'
                   onClick={() => {window.location = 'https://10.19.1.178:4443/src/videocall.html'}}>Connect Me</Button>
+          </Segment>
+         </Form>
+         </Grid.Column>
+       </Grid>
+       </div>
+     )
+   }
 
-        </Form>
-      </div>
-    )
+      
   }
-}
 
 export default withRouter(RegistrationPage3)
