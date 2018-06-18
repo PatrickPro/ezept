@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { Button, Checkbox, Form, Grid, Header,  Segment } from 'semantic-ui-react'
+import logo from './images/logos/logoEzept.png';
 
 import moment from 'moment'
 import ReactSemanticDatetime from './ReactSemanticDatetime'
@@ -18,9 +19,22 @@ class RegistrationPage1 extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Please register</h1>
+          {<img src= {logo} className="App-logo" alt="logo" />}
         </header>
-        <Form>
+        <style>{`
+          body > div,
+          body > div > div,
+          body > div > div.login-form {
+            height: 90%;
+          }
+          `}</style>
+        <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
+        <Grid.Column style={{ maxWidth: 450 }}>
+        <Header as='h2' color='teal' textAlign='center'>
+          Please enter your personal details
+        </Header>
+        <Form size='large'>
+         <Segment stacked>
           <Form.Group widths='equal'>
             <Form.Input fluid label='First name' placeholder='First name'/>
             <Form.Input fluid label='Last name' placeholder='Last name'/>
@@ -38,9 +52,12 @@ class RegistrationPage1 extends Component {
             <Checkbox label='I agree to the Terms and Conditions'/>
           </Form.Field>
           <Link
-            to={'/register/2'}><Button primary type='submit'>Submit</Button>
+            to={'/register/2'}><Button color='teal' fluid size='large' primary type='submit'>Submit</Button>
           </Link>
+         </Segment>
         </Form>
+        </Grid.Column>
+      </Grid>
       </div>
     )
   }
