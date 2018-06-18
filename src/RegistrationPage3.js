@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
+
 import { Link, withRouter } from 'react-router-dom'
 import { Button, Checkbox, Form, Grid, Header,  Segment } from 'semantic-ui-react'
 import logo from './images/logos/logoEzept.png';
+
+
+import moment from 'moment'
 
 
 class RegistrationPage3 extends Component {
@@ -11,6 +15,7 @@ class RegistrationPage3 extends Component {
         <header className="App-header">
           {<img src= {logo} className="App-logo" alt="logo" />}
         </header>
+
         <style>{`
           body > div,
           body > div > div,
@@ -28,9 +33,8 @@ class RegistrationPage3 extends Component {
             <Form.Input fluid label='Question1' placeholder='Question1'/>
             <Form.Input fluid label='Question2' placeholder='Question2'/>
 
-          <Link
-            to={'/consultation'}><Button primary type='submit'>Connect Me</Button>
-          </Link>
+           <Button primary type='submit'
+                  onClick={() => {window.location = 'https://10.19.1.178:4443/src/videocall.html'}}>Connect Me</Button>
           </Segment>
          </Form>
          </Grid.Column>
@@ -38,6 +42,8 @@ class RegistrationPage3 extends Component {
        </div>
      )
    }
+
+      
   }
 
 export default withRouter(RegistrationPage3)

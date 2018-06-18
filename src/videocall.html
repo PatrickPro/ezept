@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+
+</head>
+
+<body>
+<div id="videos-container"></div>
+
+<script src="/src/dist/RTCMultiConnection.min.js"></script>
+
+<!-- custom layout for HTML5 audio/video elements -->
+<script src="https://cdn.webrtc-experiment.com/getMediaElement.js"></script>
+
+<!-- socket.io for signaling -->
+<script src="/src/dist/socket.io.js"></script>
+
+<script>
+
+  // ......................................................
+  // ..................RTCMultiConnection Code.............
+  // ......................................................
+
+  var roomID = 'test126'
+  var connection = new RTCMultiConnection()
+
+  // comment-out below line if you do not have your own socket.io server
+  connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/'
+  connection.socketMessageEvent = 'video-conference-pp'
+  connection.session = {
+    audio: false,
+    video: true
+  }
+  connection.sdpConstraints.mandatory = {
+    OfferToReceiveAudio: false,
+    OfferToReceiveVideo: true
+  }
+  connection.videosContainer = document.getElementById('videos-container')
+  connection.onstream = function (event) {
+
+    var width = parseInt(connection.videosContainer.clientWidth)
+
+    var mediaElement = getMediaElement(event.mediaElement, {
+      title: event.userid,
+      buttons: [],
+      width: width,
+      showOnMouseEnter: true
+    })
+    connection.videosContainer.appendChild(mediaElement)
+
+    setTimeout(function () {
+      mediaElement.media.play()
+    }, 5000)
+
+    if (event.userid != roomID) {
+      mediaElement.id = 'my-video'
+      mediaElement.style.float = 'right'
+      mediaElement.style.right = '2%'
+      mediaElement.style.bottom = '5%'
+      mediaElement.style.position = 'absolute'
+      mediaElement.style.width = '10%'
+    } else {
+      mediaElement.id = 'remote-video'
+      mediaElement.style.width = '100%'
+      mediaElement.style.height = '100%'
+    }
+
+  }
+
+  // to make it one-to-one
+  connection.maxParticipantsAllowed = 1
+
+  connection.openOrJoin(roomID)
+
+
+</script>
+</body>
+
+</html>
