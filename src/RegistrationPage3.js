@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { withRouter } from 'react-router-dom'
+import { Link,withRouter } from 'react-router-dom'
 import { Button, Checkbox, Form, Grid, Header,  Segment } from 'semantic-ui-react'
 import logo from './images/logos/logoEzept.png';
 
