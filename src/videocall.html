@@ -25,31 +25,28 @@
   // ..................RTCMultiConnection Code.............
   // ......................................................
 
-  var roomID = 'test125'
+  var roomID = 'test126'
   var connection = new RTCMultiConnection()
 
   // comment-out below line if you do not have your own socket.io server
   connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/'
   connection.socketMessageEvent = 'video-conference-pp'
   connection.session = {
-    audio: true,
+    audio: false,
     video: true
   }
   connection.sdpConstraints.mandatory = {
-    OfferToReceiveAudio: true,
+    OfferToReceiveAudio: false,
     OfferToReceiveVideo: true
   }
   connection.videosContainer = document.getElementById('videos-container')
   connection.onstream = function (event) {
-    var width = 0
 
-    var x = document.getElementById('videos-container').childElementCount
-
-    width = parseInt(connection.videosContainer.clientWidth)
+    var width = parseInt(connection.videosContainer.clientWidth)
 
     var mediaElement = getMediaElement(event.mediaElement, {
       title: event.userid,
-      buttons: ['full-screen'],
+      buttons: [],
       width: width,
       showOnMouseEnter: true
     })
@@ -65,7 +62,7 @@
       mediaElement.style.right = '2%'
       mediaElement.style.bottom = '5%'
       mediaElement.style.position = 'absolute'
-      mediaElement.style.width = "10%"
+      mediaElement.style.width = '10%'
     } else {
       mediaElement.id = 'remote-video'
       mediaElement.style.width = '100%'
