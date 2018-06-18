@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
-import { withRouter } from 'react-router-dom'
-import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react'
+import { withRouter, Link } from 'react-router-dom'
+import { Button, Form, Grid, Header, Segment, Checkbox } from 'semantic-ui-react'
 import logo from './images/logos/logoEzept.png'
 import serverAddress from './myIPaddress'
 
@@ -72,11 +72,10 @@ class RegistrationPage3 extends Component {
                </p>
 
                 <Link
-                  to={'/register/2'}><Button primary type='submit' >Back</Button>
+                  to={'/register/2'}><Button primary type='submit' >Zurück</Button>
                 </Link>
                 <Button primary type='submit'
-                        onClick={() => {window.location = serverAddress + ':4443/src/videocall.html'}}>Connect
-                  Me</Button>
+                        onClick={() => {window.location = serverAddress + ':4443/src/videocall.html'}}>Video starten</Button>
               </Segment>
             </Form>
           </Grid.Column>

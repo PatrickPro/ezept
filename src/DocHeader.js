@@ -16,7 +16,7 @@ class RegistrationPage1 extends Component {
   render () {
     return (
       <div className="App2">
-        <header className="App-header">
+        <header  style={{height: '124px'}} className="App-header">
           {<img src={logo} className="App-logo" alt="logo"/>}
           Video Call
           <button style={{marginLeft: '93%', marginTop: '-900px'}}

@@ -31,13 +31,13 @@ class RegistrationPage1 extends Component {
         <Grid textAlign='center' style={{ height: '100%' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
         <Header as='h2' textAlign='center'>
-          Please enter your personal details
+          Bitte registrieren Sie sich
         </Header>
         <Form size='large'>
          <Segment stacked>
           <Form.Group widths='equal'>
-            <Form.Input fluid label='First name' placeholder='First name'/>
-            <Form.Input fluid label='Last name' placeholder='Last name'/>
+            <Form.Input fluid label='Vorname' placeholder='Vorname'/>
+            <Form.Input fluid label='Nachname' placeholder='Nachname'/>
           </Form.Group>
           <Form.Group widths='equal'>
             <Form.Field>
@@ -46,13 +46,13 @@ class RegistrationPage1 extends Component {
             </Form.Field>
           </Form.Group>
           <Form.Group widths='equal'>
-            <Form.Input label='Email' placeholder='joe@schmoe.com'/>
+            <Form.Input label='Email' placeholder='joe@schmoe.de'/>
           </Form.Group>
           <Form.Field>
-            <Checkbox label='I agree to the Terms and Conditions'/>
+            <Checkbox label='Ich stimme der Einwilligungserklärung und AGBs zu'/>
           </Form.Field>
           <Link
-            to={'/register/2'}><Button  primary type='submit'>Submit</Button>
+            to={'/register/2'}><Button  primary type='submit'>Registrieren</Button>
           </Link>
          </Segment>
         </Form>
