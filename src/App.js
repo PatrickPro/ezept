@@ -9,6 +9,7 @@ import DoctorQuestions from './DoctorQuestions'
 import Patients from './PatientsListView'
 import PatientInfo from './PatientInfo'
 import DocHeader from './DocHeader'
+import DeliveryOptions from './DeliveryOptions'
 
 import history from './helpers/withTracker'
 import DeliveryOptions from './DeliveryOptions'
@@ -34,6 +35,7 @@ export default class App extends Component {
             <Route path='/docQ' component={(DoctorQuestions)}/>
             <Route path='/register/3' component={(RegistrationPage3)}/>
             <Route path='/register/2' component={(RegistrationPage2)}/>
+            <Route path='/delivery' component={(DeliveryOptions)}/>
             <Route path='/register' component={RegistrationPage1}/>
             <Route component={RegistrationPage1}/>
           </Switch>
