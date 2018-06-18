@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react'
 
 import moment from 'moment'
-import ReactSemanticDatetime from './ReactSemanticDatetime'
 
 class RegistrationPage2 extends Component {
 

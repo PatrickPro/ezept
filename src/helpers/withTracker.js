@@ -1,4 +1,3 @@
-import { matchPath } from 'react-router'
 import createBrowserHistory from 'history/createBrowserHistory'
 
 function initialize () {

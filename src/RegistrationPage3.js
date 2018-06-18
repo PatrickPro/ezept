@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import { Link, withRouter } from 'react-router-dom'
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { withRouter } from 'react-router-dom'
+import { Button, Form } from 'semantic-ui-react'
 
 import moment from 'moment'
-import ReactSemanticDatetime from './ReactSemanticDatetime'
 
 class RegistrationPage3 extends Component {
 
@@ -21,12 +20,13 @@ class RegistrationPage3 extends Component {
           <h1 className="App-title">Anamnese</h1>
         </header>
         <Form>
-            <Form.Input fluid label='Question1' placeholder='Question1'/>
-            <Form.Input fluid label='Question2' placeholder='Question2'/>
+          <Form.Input fluid label='Question1' placeholder='Question1'/>
+          <Form.Input fluid label='Question2' placeholder='Question2'/>
 
-          <Link
-            to={'/consultation'}><Button primary type='submit'>Connect Me</Button>
-          </Link>
+
+          <Button primary type='submit'
+                  onClick={() => {window.location = 'https://10.19.1.178:4443/src/videocall.html'}}>Connect Me</Button>
+
         </Form>
       </div>
     )
