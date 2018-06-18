@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
 import { withRouter } from 'react-router-dom'
-import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react'
-import logo from './images/logos/logoEzept.png'
+import { Button, Checkbox, Form, Grid, Header,  Segment } from 'semantic-ui-react'
+import logo from './images/logos/logoEzept.png';
 
 class RegistrationPage3 extends Component {
   render () {
