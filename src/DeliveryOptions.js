@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { Button, Checkbox, Form, Grid, Header,  Segment } from 'semantic-ui-react'
 import logo from './images/logos/logoEzept.png';
-import rabbit from './images/logos/rabbits.jpg';
-import turtle from './images/logos/turtles.jpg';
 
 
 
